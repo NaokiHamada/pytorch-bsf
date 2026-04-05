@@ -109,6 +109,36 @@ The ``freeze`` argument allows you to hold specific control points constant duri
 *   **Incremental refinement:** Fit a low-degree model first, then use its control points as initialization for a higher-degree model, freezing the well-estimated parts to stabilize training.
 *   **Encoding prior knowledge:** If theoretical or physical constraints dictate the value at certain parameter combinations, you can pin those points to ensure the model respects them.
 
+What is Bézier simplex splitting (subdivision)?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Bézier simplex **splitting** (or **subdivision**) is a technique for refining a fitted Bézier simplex model by recursively dividing the parameter domain (the simplex) into smaller sub-simplices.
+
+**How it works:**
+
+1.  A Bézier simplex maps a standard parameter simplex to a family of objective values.
+2.  Splitting subdivides the parameter simplex by choosing an edge and inserting a new vertex on that edge (by default at the midpoint, ``s=0.5``), which forms smaller sub-simplices.
+3.  Each resulting sub-simplex inherits control points from the parent in a way that preserves continuity and smoothness across the subdivision.
+4.  Repeating this process creates a hierarchical decomposition, where different regions can be approximated with different levels of detail.
+
+**Why use splitting?**
+
+*   **Local refinement:** Focus computational effort on regions of interest without uniformly increasing the global degree.
+*   **Adaptive complexity:** Automatically increase model complexity only where the surface is complex or "wiggly."
+*   **Reduced overfitting:** By keeping low degree in simple regions and increasing it only where needed, you avoid unnecessary parameters.
+*   **Efficient multi-resolution analysis:** Create a coarse-to-fine hierarchy useful for progressive fitting or visualization.
+
+**Practical usage:**
+
+Splitting is particularly valuable when:
+
+*   The Pareto front has **varying curvature**—smooth in some regions, highly curved in others.
+*   Computational budget is limited and you want to allocate samples intelligently.
+*   You need a **hierarchical representation** for visualization or downstream analysis.
+*   High-degree fits suffer from oscillations or overfitting, but low-degree models miss important features.
+
+See the :doc:`advanced` documentation for implementation details and examples.
+
 
 Troubleshooting
 ---------------

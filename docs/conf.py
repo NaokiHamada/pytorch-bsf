@@ -53,6 +53,7 @@ bibtex_bibfiles = ["refs.bib"]
 # -- autodoc -----------------------------------------------------------------
 autodoc_type_aliases = {
     "Index": "torch_bsf.bezier_simplex.Index",
+    "ControlPointsData": "torch_bsf.bezier_simplex.ControlPointsData",
 }
 autodoc_inherit_docstrings = False
 # Optional dependencies that may not be present in the docs build environment.

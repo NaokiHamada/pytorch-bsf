@@ -16,3 +16,46 @@ From a mathematical perspective, modifying the power allocations to maximize the
 These strongly convex definitions enable massive decentralized networking algorithms—like accelerated Alternating Direction Method of Multipliers (ADMM)—to secure linear convergence uniformly across geographically vast nodes.
 
 Additionally, as weather profiles and market electricity pricing constantly fluctuate, network operators must instantaneously reroute their balance policies. Equipping a distributed smart grid operator with a pre-computed Bézier simplex mapping allows the grid to frictionlessly evaluate these high-dimensional, competitive variables in real-time, executing continuous equilibrium adjustments across millions of endpoints securely.
+
+Numerical Experiments
+---------------------
+
+We illustrate Bézier simplex fitting on a two-generator optimal power flow problem balancing generation cost against emissions.
+
+**Problem Setup:**
+
+- Power outputs: :math:`P = [P_1, P_2] \in \mathbb{R}^2`
+- Generation cost (strongly convex):
+
+.. math::
+
+   f_1(P) = 0.5 P_1^2 + 0.3 P_2^2 + 0.05(P_1 + P_2)^2
+
+- Emissions (strongly convex):
+
+.. math::
+
+   f_2(P) = 0.2 P_1^2 + 0.6 P_2^2 + 0.05(P_1 + P_2)^2
+
+**Experiment Procedure:**
+
+1. Sample 10 weight vectors :math:`w = (w_1, w_2)` on the 1-simplex from :math:`(1,0)` to :math:`(0,1)`.
+2. For each :math:`w`, solve :math:`P^*(w) = \arg\min_P [w_1 f_1(P) + w_2 f_2(P)]` using L-BFGS-B.
+3. Collect the Pareto front points :math:`(f_1(P^*(w)), f_2(P^*(w)))`.
+4. Fit a degree-3 Bézier simplex to the weight–objective pairs.
+5. Visualize the fitted Bézier curve against the optimization-derived Pareto front.
+
+.. list-table::
+   :widths: 50 50
+   :align: center
+
+   * - .. image:: ../_static/smart_grids_pareto_set.png
+         :alt: Pareto set for smart grid (power output space)
+         :width: 100%
+     - .. image:: ../_static/smart_grids_pareto.png
+         :alt: Bézier simplex fitting to smart grid Pareto front
+         :width: 100%
+   * - Pareto set: optimal generator power outputs :math:`P^*(w)` in decision space, traced from cost-minimizing to emission-minimizing solutions.
+     - Pareto front: optimization-derived points (blue) and Bézier simplex approximation (red curve) in objective space.
+
+The complete example script is available at :file:`examples/generate_smart_grids_pareto.py`.

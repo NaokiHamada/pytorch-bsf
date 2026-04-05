@@ -11,24 +11,11 @@ except PackageNotFoundError:
     __version__ = "unknown"
 
 from torch_bsf.bezier_simplex import BezierSimplex, BezierSimplexDataModule, fit, fit_kfold, validate_control_points
-from torch_bsf.splitting import (
-    SplitCriterion,
-    longest_edge_criterion,
-    max_error_criterion,
-    reparametrize,
-    split,
-    split_by_criterion,
-)
+
 __all__ = [
     "BezierSimplex",
     "BezierSimplexDataModule",
     "fit",
     "fit_kfold",
     "validate_control_points",
-    "SplitCriterion",
-    "split",
-    "reparametrize",
-    "longest_edge_criterion",
-    "max_error_criterion",
-    "split_by_criterion",
 ]

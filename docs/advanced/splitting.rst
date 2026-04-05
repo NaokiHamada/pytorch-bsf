@@ -338,12 +338,12 @@ below demonstrates one round of such refinement:
 API Reference
 -------------
 
-See the following public `torch_bsf` entries in the `API Documentation <../modules.html>`_
+See the following public `torch_bsf.splitting` entries in the `API Documentation <../modules.html>`_
 for the full parameter reference:
 
-* :func:`torch_bsf.split`
-* :func:`torch_bsf.reparametrize`
-* :func:`torch_bsf.longest_edge_criterion`
-* :func:`torch_bsf.max_error_criterion`
-* :func:`torch_bsf.split_by_criterion`
-* :data:`torch_bsf.SplitCriterion`
+* :func:`torch_bsf.splitting.split`
+* :func:`torch_bsf.splitting.reparametrize`
+* :func:`torch_bsf.splitting.longest_edge_criterion`
+* :func:`torch_bsf.splitting.max_error_criterion`
+* :func:`torch_bsf.splitting.split_by_criterion`
+* :data:`torch_bsf.splitting.SplitCriterion`

@@ -108,11 +108,10 @@ under the solution map shrink to the single null-model point :math:`P^*`.
    :math:`(0,1,0)` at the top (green), and :math:`(0,0,1)` at the
    bottom-right (blue).
    The gradient right edge (green→blue) is the null-model base edge to be identified.
-   **Right** – The quotient space rotated 90° counterclockwise: vertex :math:`A` =
-   :math:`(1,0,0)` (red) at the left, and the null-model point :math:`P^*` at the
-   right shown as a large green dot :math:`(0,1,0)` behind a smaller blue dot
-   :math:`(0,0,1)`, reflecting that both endpoints of the base edge are identified
-   to :math:`P^*`.
+   **Right** – The quotient space: vertex :math:`A` = :math:`(1,0,0)` (red) at the
+   left, and the null-model point :math:`P^*` at the right shown as a large green dot
+   :math:`(0,1,0)` behind a smaller blue dot :math:`(0,0,1)`, reflecting that both
+   endpoints of the base edge are identified to :math:`P^*`.
 
 
 Grid Structure

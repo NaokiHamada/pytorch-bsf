@@ -29,7 +29,7 @@ torch\_bsf.control\_points module
    :show-inheritance:
 
 torch\_bsf.plotting module
----------------------------
+--------------------------
 
 .. automodule:: torch_bsf.plotting
    :members:
@@ -45,7 +45,7 @@ torch\_bsf.preprocessing module
    :show-inheritance:
 
 torch\_bsf.sampling module
----------------------------
+--------------------------
 
 .. automodule:: torch_bsf.sampling
    :members:
@@ -53,9 +53,17 @@ torch\_bsf.sampling module
    :show-inheritance:
 
 torch\_bsf.sklearn module
----------------------------
+-------------------------
 
 .. automodule:: torch_bsf.sklearn
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+torch\_bsf.splitting module
+---------------------------
+
+.. automodule:: torch_bsf.splitting
    :members:
    :undoc-members:
    :show-inheritance:
